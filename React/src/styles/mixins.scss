@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+// Responsive breakpoint mixin using tokens defined in variables.scss.
+// Usage: @include respond-to('md') { ... }
+@mixin respond-to($breakpoint) {
+  $breakpoints: (
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px
+  );
+
+  $value: map.get($breakpoints, $breakpoint);
+
+  @if $value {
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn 'Unknown breakpoint: #{$breakpoint}';
+  }
+}
+
+// Simple flex alignment helper.
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Card surface mixin for consistent background and border styles.
+@mixin glass-card($radius: 24px, $shadow: 0 30px 60px rgba(8, 14, 34, 0.55)) {
+  background: rgba(13, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: $radius;
+  box-shadow: $shadow;
+  backdrop-filter: blur(22px);
+}

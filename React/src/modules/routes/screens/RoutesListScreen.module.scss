@@ -1,0 +1,215 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.headerTitle h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.headerTitle p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.refreshButton {
+  align-self: flex-start;
+  background: transparent;
+  color: #82b1ff;
+  border: 1px solid rgba(130, 177, 255, 0.5);
+  border-radius: 999px;
+  padding: 0.45rem 1.25rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: rgba(130, 177, 255, 0.1);
+  color: #bbdefb;
+}
+
+.refreshButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tableWrapper {
+  background: rgba(18, 33, 64, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: rgba(19, 47, 89, 0.85);
+}
+
+thead th {
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 1rem 1.25rem;
+  vertical-align: top;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.statusCell {
+  min-width: 12rem;
+}
+
+.statusSelect {
+  width: 100%;
+  background: rgba(23, 54, 96, 0.95);
+  color: #e3f2fd;
+  border: 1px solid rgba(130, 177, 255, 0.4);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  transition: border 0.2s ease;
+}
+
+.statusSelect:focus {
+  outline: none;
+  border-color: rgba(130, 177, 255, 0.85);
+  box-shadow: 0 0 0 3px rgba(130, 177, 255, 0.2);
+}
+
+.locationGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+}
+
+.locationLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.emptyState,
+.errorState {
+  padding: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.emptyState strong {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.errorState button {
+  margin-top: 1rem;
+}
+
+.metaCell {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.actionsCell {
+  width: 5rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.viewReportButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(130, 177, 255, 0.45);
+  background: rgba(19, 47, 89, 0.85);
+  color: #bbdefb;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, border 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.viewReportButton:hover:not(:disabled) {
+  background: rgba(130, 177, 255, 0.2);
+  border-color: rgba(130, 177, 255, 0.75);
+  color: #e3f2fd;
+  transform: translateY(-1px);
+}
+
+.viewReportButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.deleteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 67, 54, 0.45);
+  background: rgba(244, 67, 54, 0.08);
+  color: #ff8a80;
+  font-size: 1.1rem;
+  transition: background 0.2s ease, border 0.2s ease, transform 0.2s ease;
+}
+
+.deleteButton:hover:not(:disabled) {
+  background: rgba(244, 67, 54, 0.16);
+  border-color: rgba(244, 67, 54, 0.75);
+  transform: translateY(-1px);
+  color: #ff5252;
+}
+
+.deleteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loadingRow td {
+  padding: 2rem 1.25rem;
+  text-align: center;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+}

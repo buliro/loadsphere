@@ -1,0 +1,86 @@
+@use './variables.scss' as v;
+@use './mixins.scss' as m;
+
+:root,
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  --background: #{v.$color-background};
+  --surface: #{v.$color-surface};
+  --surface-border: #{v.$color-surface-border};
+  --text-primary: #{v.$color-text-primary};
+  --text-secondary: #{v.$color-text-secondary};
+  --accent: #{v.$color-accent};
+  --accent-soft: #{v.$color-accent-soft};
+  --error: #{v.$color-error};
+  font-family: 'Inter Variable', 'Plus Jakarta Sans Variable', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% -10%, rgba(59, 130, 246, 0.3), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(124, 58, 237, 0.22), transparent 50%),
+    linear-gradient(135deg, rgba(11, 19, 35, 0.92), rgba(2, 6, 23, 0.94));
+  font-family: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow-x: hidden;
+}
+
+body.app-body--dashboard {
+  align-items: stretch;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+body.app-body--dashboard #root {
+  min-height: 100vh;
+}
+
+@include m.respond-to('sm') {
+  body:not(.app-body--dashboard) {
+    padding: 2.25rem 1rem;
+  }
+
+  #root {
+    padding: 0;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.45);
+  color: var(--text-primary);
+}

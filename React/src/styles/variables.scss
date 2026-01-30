@@ -1,0 +1,28 @@
+// Global design tokens for colors, spacing, typography, and layout.
+
+// Palette
+$color-background: #010517;
+$color-surface: rgba(13, 23, 42, 0.78);
+$color-surface-border: rgba(148, 163, 184, 0.26);
+$color-text-primary: #f8fafc;
+$color-text-secondary: #94a3b8;
+$color-accent: #3b82f6;
+$color-accent-secondary: #7c3aed;
+$color-accent-soft: rgba(59, 130, 246, 0.2);
+$color-error: #f87171;
+
+// Radii & elevation
+$radius-card: 24px;
+$radius-button: 14px;
+$shadow-card: 0 30px 60px rgba(8, 14, 34, 0.55);
+
+// Layout helpers
+$layout-app-max-width: 1080px;
+$layout-dashboard-max-width: 1320px;
+$layout-auth-max-width: 520px;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;

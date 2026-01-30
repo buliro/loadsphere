@@ -1,0 +1,103 @@
+.app-shell {
+  position: relative;
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  max-height: 100vh;
+  // padding: 2.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.app-shell::before {
+  content: '';
+  position: absolute;
+  inset: -120px -160px;
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.35), transparent 55%);
+  filter: blur(60px);
+  z-index: -2;
+}
+
+.app-shell::after {
+  content: '';
+  position: absolute;
+  inset: -120px -140px;
+  background: radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.3), transparent 55%);
+  filter: blur(80px);
+  opacity: 0.9;
+  z-index: -3;
+}
+
+.app-shell--auth {
+  // padding-top: 4rem;
+  // padding-bottom: 4rem;
+  overflow: hidden;
+}
+
+.app-shell--dashboard {
+  width: min(1920px, 100%);
+  // padding: 2.5rem 3rem;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  color: var(--text-secondary);
+
+  p {
+    font-size: 1.05rem;
+  }
+}
+
+.app-loading__spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid rgba(148, 163, 184, 0.25);
+  border-top-color: rgba(59, 130, 246, 0.85);
+  animation: spin 0.9s linear infinite;
+}
+
+@media (max-width: 1024px) {
+  .app-shell {
+    padding: 2.75rem 1.25rem;
+    min-height: 100vh;
+  }
+
+  .app-shell::before,
+  .app-shell::after {
+    inset: -90px -110px;
+  }
+
+  .app-shell--dashboard {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 2rem 1rem;
+  }
+
+  .app-shell::before,
+  .app-shell::after {
+    inset: -70px -80px;
+  }
+
+  .app-shell--auth {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
